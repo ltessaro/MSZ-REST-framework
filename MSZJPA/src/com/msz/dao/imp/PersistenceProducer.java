@@ -1,20 +1,23 @@
 package com.msz.dao.imp;
 
-import javax.enterprise.context.Dependent;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceUnit;
 
 public class PersistenceProducer {
-	    @Produces
-	    @PersistenceContext(unitName="MSZJPA")
-	    @Dependent
-	    EntityManager entityManager;
+	public static final String MSZJPA_PERSISTENCE = "MSZJPA";
 
-	    @Produces
-	    @PersistenceUnit(unitName="MSZJPA")
-	    @Dependent
-	    EntityManagerFactory entityManagerFactory;
+	@Produces
+	@PersistenceUnit(unitName=MSZJPA_PERSISTENCE)
+	@ApplicationScoped
+	public EntityManagerFactory create() {
+		return Persistence.createEntityManagerFactory(MSZJPA_PERSISTENCE);
+	}
+
+	public void destroy(@Disposes EntityManagerFactory factory) {
+		factory.close();
+	}
 }

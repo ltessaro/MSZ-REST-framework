@@ -6,8 +6,4 @@
     <scan>
         <exclude name="org.jboss.weld.**" />
     </scan>
-    
-	<!-- interceptors>
-		<class>org.jboss.seam.transaction.TransactionInterceptor</class>
-	</interceptors-->
 </beans>
