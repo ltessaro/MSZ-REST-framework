@@ -1,0 +1,10 @@
+<project>
+  <parent>
+    <groupId>com.msz.app</groupId>
+    <artifactId>msz-app</artifactId>
+    <version>1</version>
+    <relativePath>MSZWebRS/pom.xml</relativePath>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>mszapp</artifactId>
+</project>
