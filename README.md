@@ -1,4 +1,4 @@
 MSZ-REST-framework
 ==================
 
-App framework to create an JAX-RS app using RESTeasy + WELD + JPA + Hibernate
+App model to create an JAX-RS app using RESTeasy + WELD + JPA + Hibernate using Postgres on Apache Tomcat.
