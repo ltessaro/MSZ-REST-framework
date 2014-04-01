@@ -1,4 +1,4 @@
-package com.msz.dao.imp;
+package com.msz.dao.hibernate;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Disposes;

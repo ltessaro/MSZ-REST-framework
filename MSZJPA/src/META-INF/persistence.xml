@@ -4,14 +4,9 @@
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 			xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="MSZJPA"  transaction-type="RESOURCE_LOCAL">
-
-		<class>com.msz.model.Player</class>
 		<class>com.msz.model.User</class>
-		<class>com.msz.model.Match</class>
-		<class>com.msz.model.Invite</class>
-		<class>com.msz.model.Settings</class>
-		<class>com.msz.model.Task</class>
 		<class>com.msz.model.Note</class>
+		<class>com.msz.model.Task</class>
 		
 		<properties>
             <property name="hibernate.id.new_generator_mappings" value ="true"/>

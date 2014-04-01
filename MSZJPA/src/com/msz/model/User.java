@@ -14,19 +14,26 @@ public class User implements Serializable {
 
 	@Id
 	private Long id;
+	private String accessToken; // session
 
 	private String email;
 	private String password;
 
 	private String facebookID;
 	private String facebookToken;
-	private String facebookPermissions;
-	private Date facebookActiveSince;
 
-	private Date createdAt;
+	private String activationKey;
+	private Date activatedAt;
+	private Date signedInAt;
 	private Date lastLogin;
+	private Date createdAt = new Date();
 
-	private Player player;
+	public User() {
+	}
+
+	public User(Long id) {
+		this.id = id;
+	}
 
 	public Long getId() {
 		return id;
@@ -34,6 +41,14 @@ public class User implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getAccessToken() {
+		return accessToken;
+	}
+
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
 	}
 
 	public String getEmail() {
@@ -68,28 +83,28 @@ public class User implements Serializable {
 		this.facebookToken = facebookToken;
 	}
 
-	public String getFacebookPermissions() {
-		return facebookPermissions;
+	public String getActivationKey() {
+		return activationKey;
 	}
 
-	public void setFacebookPermissions(String facebookPermissions) {
-		this.facebookPermissions = facebookPermissions;
+	public void setActivationKey(String activationKey) {
+		this.activationKey = activationKey;
 	}
 
-	public Date getFacebookActiveSince() {
-		return facebookActiveSince;
+	public Date getActivatedAt() {
+		return activatedAt;
 	}
 
-	public void setFacebookActiveSince(Date facebookActiveSince) {
-		this.facebookActiveSince = facebookActiveSince;
+	public void setActivatedAt(Date activatedAt) {
+		this.activatedAt = activatedAt;
 	}
 
-	public Date getCreatedAt() {
-		return createdAt;
+	public Date getSignedInAt() {
+		return signedInAt;
 	}
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
+	public void setSignedInAt(Date signedInAt) {
+		this.signedInAt = signedInAt;
 	}
 
 	public Date getLastLogin() {
@@ -100,11 +115,12 @@ public class User implements Serializable {
 		this.lastLogin = lastLogin;
 	}
 
-	public Player getPlayer() {
-		return player;
+	public Date getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setPlayer(Player player) {
-		this.player = player;
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
 	}
+
 }

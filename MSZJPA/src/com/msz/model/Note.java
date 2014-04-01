@@ -10,14 +10,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "MSZNote")
 public class Note implements Serializable {
-	private static final long serialVersionUID = -6099165709201376465L;
-
+	private static final long serialVersionUID = -4207606364876935718L;
+	
 	@Id
 	private Long id;
-	private Date created;
 	private String note;
-	private User owner;
+	private Date createdAt = new Date();
+	private User createdBy;
 	private Task task;
+
+	public Note() {
+	}
+
+	public Note(Long id) {
+		this.id = id;
+	}
 
 	public Long getId() {
 		return id;
@@ -25,14 +32,6 @@ public class Note implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Date getCreated() {
-		return created;
-	}
-
-	public void setCreated(Date created) {
-		this.created = created;
 	}
 
 	public String getNote() {
@@ -43,12 +42,20 @@ public class Note implements Serializable {
 		this.note = note;
 	}
 
-	public User getOwner() {
-		return owner;
+	public Date getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setOwner(User owner) {
-		this.owner = owner;
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public User getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
 	}
 
 	public Task getTask() {
